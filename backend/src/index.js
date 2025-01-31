@@ -7,20 +7,20 @@ import path from "path";
 
 import { connectDB } from "./lib/db.js";
 
-import authRoutes from "./routes/auth.route.js";
+import authRoutes from "./routes/auth.Routes.js";
 import messageRoutes from "./routes/message.route.js";
 import { app, server } from "./lib/socket.js";
 
 dotenv.config();
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "http://localhost:5174",
     credentials: true,
   })
 );
